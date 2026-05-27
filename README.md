@@ -10,6 +10,16 @@ Comprehensive Java multithreading examples covering Thread lifecycle, synchroniz
 - wait()/notify() patterns
 - Thread.join() & Thread.sleep()
 
+## Producer-Consumer Examples
+
+### Basic Version (Completed - May 27, 2026)
+
+| File |  Description  |
+| :--- |  :--- |
+| `A_ProducerConsumer.java` | Classic wait/notify implementation simple example |
+| `B_Queued_Pro_Consumer.java` | Queue-based implementation (preferred for production) |
+
+
 ### Coming Soon
 - Producer-Consumer problems with Simulation
 - MutipleUser simutation
