@@ -19,6 +19,16 @@ Comprehensive Java multithreading examples covering Thread lifecycle, synchroniz
 | `A_ProducerConsumer.java` | Classic wait/notify implementation simple example |
 | `B_Queued_Pro_Consumer.java` | Queue-based implementation (preferred for production) |
 
+### Producer-Consumer Examples (Refactored version) (Completed - May 27, 2026)
+
+| File | Description |
+| :--- | :--- |
+| `SharedBuffer.java` | Shared queue with wait/notify logic |
+| `Producer.java` | Producer Java class |
+| `Consumer.java` | Consumer Java class |
+| `Queued_Producer_Consumer.java` | Main class to run the example |
+
+**Improvement:** Seperated into individual classes for better modularity.
 
 ### Coming Soon
 - Producer-Consumer problems with Simulation
