@@ -4,36 +4,36 @@ Comprehensive Java multithreading examples covering Thread lifecycle, synchroniz
 
 ## Topics Covered             
 
-### Completed (May26, 2026)
-- Thread creation (Thread class, Runnable, Lamda)
-- Synchronization & locks
-- wait()/notify() patterns
-- Thread.join() & Thread.sleep()
+### Core Fundamentals (Completed - May 26, 2026)
+* Thread creation (Thread class, Runnable, Lambda expressions)
+* Synchronization mechanics & intrinsic locks
+* Fundamental `wait()` / `notify()` patterns
+* Resource management using `Thread.join()` and `Thread.sleep()`
 
-## Producer-Consumer Examples
+---
 
-### Basic Version (Completed - May 27, 2026)
+## 📦 Producer-Consumer & Task Coordination Examples
 
-| File |  Description  |
-| :--- |  :--- |
-| `A_ProducerConsumer.java` | Classic wait/notify implementation simple example |
-| `B_Queued_Pro_Consumer.java` | Queue-based implementation (preferred for production) |
+### 1. Basic Architecture (Completed - May 27, 2026)
+* **Monolithic Approach (`multithreads.pro_consumer.basic`):**
+  * `A_ProducerConsumer.java` — Classic wait/notify implementation inside a single monolithic structure.
+  * `B_Queued_Pro_Consumer.java` — Inter-thread communications utilizing standard Queue structures.
+* **Modular Refactored Approach (`multithreads.pro_consumer.basic_reffactored`):**
+  * Decoupled components (`Producer.java`, `Consumer.java`, `SharedBuffer.java`) separating execution logic to maximize code readability and maintainability.
 
-### Producer-Consumer Examples (Refactored version) (Completed - May 27, 2026)
+### 2. Timed Task Coordination Simulation (Completed - May 28, 2026)
+Located in `multithreads.pro_consumer.ex_2`, this iteration explores state management, defensive looping patterns, and temporal tracking during thread execution blocks.
 
 | File | Description |
 | :--- | :--- |
-| `SharedBuffer.java` | Shared queue with wait/notify logic |
-| `Producer.java` | Producer Java class |
-| `Consumer.java` | Consumer Java class |
-| `Queued_Producer_Consumer.java` | Main class to run the example |
+| `TaskHandler.java` | Coordinates production and consumption logic, safeguarding threads with a `while` conditional check loop against spurious wakeups, utilizing `wait(timeout)`. |
+| `TaskRunner.java` | Runnable engine simulating a manager context constantly checking task status metrics. |
+| `Waiter.java` | Runnable worker thread checking operational flags and executing under explicit timed locks. |
+| `WaiterTask_Main.java` | Driver entry point orchestrating resource threads and validating latency time overhead. |
 
-**Improvement:** Seperated into individual classes for better modularity.
-
-### Coming Soon
-- Producer-Consumer problems with Simulation
-- MutipleUser simutation
-
+### ⏳ Coming Soon
+* Complex real-world domain multi-thread simulations (Chef & Waiter interaction models)
+* Networked Multi-User concurrent TCP chat servers utilizing Socket structures
 ## Why this repo?
 - Clean, documented code with beginner-friendly explanations
 - Practical examples demonstating thread coordination
