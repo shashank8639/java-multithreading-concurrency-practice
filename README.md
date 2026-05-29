@@ -31,9 +31,20 @@ Located in `multithreads.pro_consumer.ex_2`, this iteration explores state manag
 | `Waiter.java` | Runnable worker thread checking operational flags and executing under explicit timed locks. |
 | `WaiterTask_Main.java` | Driver entry point orchestrating resource threads and validating latency time overhead. |
 
+### 3. ChefWaiter (Producer-Consumer problem) (Completed - May 29, 2026)
+* **Monolithic Approach (`multithreads.pro_consumer.ex_3.notifyAll`):**
+  * `MultipleWaiters_NotifyAll.java` - Inter-thread communication through wait/nofifyAll implementation inside single monolithic structure.
+  
+### 4. ChefWaiter (Restaurant Simulation) (Completed - May 29, 2026)
+Located in `multithreads.pro_consumer.ex_4.restaurant-simulation`, it has 2programs intentionally expresses Deadlock situation if not handled well, and another one resolves the bug by using 'volatile'.
+* **`Broken_ChefWaiter.java`:** It has issues Infinite Waiting Bug, Memory Visibility issues(No cross-thread visibility) and Abrupt Termination.
+* **`ChefWaiter.java`:** All the issues in the `Broken_ChefWaiter.java` fixed in this class.
+  * This file safeguards Thread Communication , restructured Consumer loop (while(isRestaurantOpen || !orderCounter.isEmpty())).
+
+
 ### ⏳ Coming Soon
-* Complex real-world domain multi-thread simulations (Chef & Waiter interaction models)
 * Networked Multi-User concurrent TCP chat servers utilizing Socket structures
+
 ## Why this repo?
 - Clean, documented code with beginner-friendly explanations
 - Practical examples demonstating thread coordination
